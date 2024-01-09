@@ -7,6 +7,8 @@ def get_days_to_birthday(date_birthday):
     today = dtime.date.today()
     today_year = today.year
     date_birthday = date_birthday.replace(year = today_year)
+    if date_birthday < today:
+        date_birthday = date_birthday.replace(year = today_year + 1)
     return date_birthday - today
 
 print(get_days_to_birthday(lera))
